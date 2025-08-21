@@ -1,0 +1,160 @@
+/* Welcome.css */
+.welcome-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: white;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.welcome-content {
+  text-align: center;
+  width: 100%;
+  max-width: 320px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 12px;
+  letter-spacing: 0.025em;
+}
+
+.agenda-subtitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 16px;
+}
+
+.agenda-image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.agenda-image {
+  width: 256px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Small devices (640px and up) */
+@media (min-width: 640px) {
+  .welcome-container {
+    padding: 0;
+  }
+  
+  .welcome-content {
+    max-width: 512px;
+    padding: 24px;
+  }
+  
+  .welcome-title {
+    font-size: 2.25rem;
+    margin-bottom: 16px;
+    letter-spacing: 0.05em;
+  }
+  
+  .agenda-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+  }
+  
+  .agenda-image {
+    width: 288px;
+    border-radius: 12px;
+  }
+}
+
+/* Medium devices (768px and up) */
+@media (min-width: 768px) {
+  .welcome-container {
+    padding: 0;
+  }
+  
+  .welcome-content {
+    max-width: 672px;
+    padding: 32px;
+  }
+  
+  .welcome-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .agenda-subtitle {
+    font-size: 1.875rem;
+    margin-bottom: 32px;
+  }
+  
+  .agenda-image {
+    width: 320px;
+    border-radius: 16px;
+  }
+}
+
+/* Large devices (1024px and up) */
+@media (min-width: 1024px) {
+  .welcome-container {
+    padding: 0;
+  }
+  
+  .welcome-content {
+    max-width: 896px;
+    padding: 48px;
+  }
+  
+  .welcome-title {
+    font-size: 3.75rem;
+    margin-bottom: 24px;
+  }
+  
+  .agenda-subtitle {
+    font-size: 2.25rem;
+    margin-bottom: 40px;
+  }
+  
+  .agenda-image {
+    width: 384px;
+  }
+}
+
+/* Extra large devices (1280px and up) */
+@media (min-width: 1280px) {
+  .welcome-content {
+    max-width: 1280px;
+    padding: 64px;
+  }
+  
+  .welcome-title {
+    font-size: 4.5rem;
+    margin-bottom: 32px;
+  }
+  
+  .agenda-subtitle {
+    font-size: 3rem;
+    margin-bottom: 48px;
+  }
+  
+  .agenda-image {
+    width: 450px;
+  }
+}
