@@ -22,7 +22,7 @@ const Welcome = () => {
   }, [showPopup]);
 
   return (
-    <div className="w-screen min-h-screen p-2 sm:p-4 flex flex-col items-center justify-start bg-white">
+    <div className="w-screen min-h-screen flex flex-col items-center justify-center bg-white" style={{ margin: 0, padding: 0 }}>
       {showPopup && (
         <div
           className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 z-50"
@@ -31,7 +31,7 @@ const Welcome = () => {
             WebkitAnimation: 'fadeIn 0.7s',
           }}
         >
-          <div className="bg-white rounded-xl  px-4 py-6 sm:px-10 sm:py-8 flex flex-col items-center w-11/12 max-w-xs sm:max-w-md">
+          <div className="bg-white rounded-xl px-4 py-6 sm:px-10 sm:py-8 flex flex-col items-center w-11/12 max-w-xs sm:max-w-md">
             <h1 className="text-2xl sm:text-4xl font-bold mb-2 text-[#127C8C] text-center">Welcome to Vyom</h1>
             <div className="w-full h-2 bg-gray-200 rounded-full mt-6 overflow-hidden">
               <div
@@ -47,29 +47,26 @@ const Welcome = () => {
         </div>
       )}
       
-      {/* Heading and Subheading */}
-      <div className="text-center mt-4 sm:mt-8 mb-6 sm:mb-8 px-4">
-        <h1 className="text-3xl sm:text-5xl font-bold text-[#127C8C] mb-2 sm:mb-4">
+      {/* Heading */}
+      <div className="text-center mb-6 sm:mb-8">
+        <h1 className="text-4xl sm:text-5xl font-bold text-[#127C8C] mb-2 sm:mb-4">
           Event Agenda
         </h1>
-        <p className="text-lg sm:text-xl text-gray-600 font-medium">
-          Join us for an amazing experience
-        </p>
       </div>
 
       <div
-        className="w-screen bg-contain bg-center bg-no-repeat  transition-all duration-500"
+        className="w-screen bg-contain bg-center bg-no-repeat transition-all duration-500"
         style={{
           backgroundImage: `url(${bgImage})`,
           opacity: showPopup ? 0.3 : 1,
           filter: showPopup ? 'blur(2px)' : 'none',
           transition: 'opacity 0.5s, filter 0.5s',
-          marginLeft: '-0.5rem',
-          marginRight: '-0.5rem',
-          minHeight: '50vh',
+          margin: 0,
+          minHeight: '60vh',
           height: 'auto',
         }}
       ></div>
+      
       {/* Inline fadeIn keyframes */}
       <style>
         {`
