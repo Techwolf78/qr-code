@@ -1,0 +1,1 @@
+// This file is a placeholder for jsQR, which will be installed and imported in QrCodeScanner.jsx for QR code detection.
