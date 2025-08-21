@@ -1,16 +1,15 @@
 import React from 'react';
-import vyomImage from './assets/vyom.jpg';
+import bgImage from './assets/vyom.jpg';
+
 
 const Welcome = () => {
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center p-4">
-      <div className="w-full max-w-4xl">
-        <img 
-          src={vyomImage} 
-          alt="Event Agenda" 
-          className="w-full h-auto rounded-lg shadow-lg"
-        />
-      </div>
+    <div className="w-screen  p-4 flex flex-col items-center justify-start bg-black">
+      <h1 className="text-4xl font-bold mt-12 mb-8 text-white">Welcome to Vyom</h1>
+      <div
+        className="w-full max-w-3xl h-96 bg-cover bg-center  shadow-lg"
+        style={{ backgroundImage: `url(${bgImage})` }}
+      ></div>
     </div>
   );
 };
