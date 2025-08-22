@@ -224,11 +224,12 @@ const Welcome = () => {
       
       {/* Content Area */}
       <div className="flex-1 flex flex-col items-center justify-center w-full" style={{ paddingBottom: showFeedbackBanner ? '80px' : '0px' }}>
-        {/* Heading */}
+        {/* Main Heading */}
         <div className="text-center mb-6 sm:mb-8">
-          <h1 className="text-4xl sm:text-5xl font-bold text-[#ffffff] mb-2 sm:mb-4">
-            Event Agenda
+          <h1 className="text-5xl sm:text-6xl font-bold text-[#ffffff] mb-2 sm:mb-4">
+            Welcome to Vyom
           </h1>
+
         </div>
 
         <div
