@@ -7,7 +7,6 @@ const Welcome = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [progress, setProgress] = useState(100);
   const [feedbackGiven, setFeedbackGiven] = useState(false);
-  const [feedbackType, setFeedbackType] = useState('');
   const [feedbackCount, setFeedbackCount] = useState(0);
   const [isBlocked, setIsBlocked] = useState(false);
   const [cooldownTimer, setCooldownTimer] = useState(0);
@@ -99,9 +98,7 @@ const Welcome = () => {
     }
   }, [cooldownTimer, isBlocked]);
 
-  const handleClosePopup = () => {
-    setShowPopup(false);
-  };
+
 
   const handleFeedback = async (type) => {
     // Check if user is blocked
@@ -117,7 +114,6 @@ const Welcome = () => {
 
       const newCount = feedbackCount + 1;
       setFeedbackCount(newCount);
-      setFeedbackType(type);
       setFeedbackGiven(true);
 
       // Check if user exceeded the limit (3 times)
@@ -167,7 +163,6 @@ const Welcome = () => {
     } catch (error) {
       console.error('Error storing feedback:', error);
       // Still show thank you message even if storage fails
-      setFeedbackType(type);
       setFeedbackGiven(true);
       setTimeout(() => {
         setFeedbackGiven(false);
@@ -186,7 +181,7 @@ const Welcome = () => {
   };
 
   return (
-    <div className="w-screen min-h-screen flex flex-col items-center justify-center bg-white" style={{ margin: 0, padding: 0 }}>
+    <div className="w-screen min-h-screen flex flex-col items-center justify-center bg-[#181816]" style={{ margin: 0, padding: 0 }}>
       {/* Sticky Banner */}
       <div className="w-full bg-[#127C8C] text-white text-center py-3 px-4 sticky top-0 z-40 shadow-md">
         <p className="text-sm sm:text-lg font-medium">
@@ -206,21 +201,12 @@ const Welcome = () => {
           }}
         >
           <div 
-            className="bg-white/90 rounded-xl px-6 py-8 sm:px-12 sm:py-10 flex flex-col items-center w-11/12 max-w-sm sm:max-w-lg shadow-2xl border border-white/20 relative"
+            className="bg-white/90 rounded-xl px-6 py-8 sm:px-12 sm:py-10 flex flex-col items-center w-11/12 max-w-sm sm:max-w-lg shadow-2xl border border-white/20"
             style={{
               backdropFilter: 'blur(20px)',
               WebkitBackdropFilter: 'blur(20px)',
             }}
           >
-            {/* Close Button */}
-            <button
-              onClick={handleClosePopup}
-              className="absolute top-4 right-4 text-gray-500 hover:text-[#127C8C] transition-colors duration-200 text-2xl font-bold w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100"
-              aria-label="Close popup"
-            >
-              ✕
-            </button>
-
             <h1 className="text-3xl sm:text-5xl font-bold mb-4 text-[#127C8C] text-center">Welcome to Vyom</h1>
             <div className="w-full h-3 bg-gray-200 rounded-full mt-8 overflow-hidden">
               <div
@@ -240,7 +226,7 @@ const Welcome = () => {
       <div className="flex-1 flex flex-col items-center justify-center w-full" style={{ paddingBottom: showFeedbackBanner ? '80px' : '0px' }}>
         {/* Heading */}
         <div className="text-center mb-6 sm:mb-8">
-          <h1 className="text-4xl sm:text-5xl font-bold text-[#127C8C] mb-2 sm:mb-4">
+          <h1 className="text-4xl sm:text-5xl font-bold text-[#ffffff] mb-2 sm:mb-4">
             Event Agenda
           </h1>
         </div>
@@ -262,7 +248,7 @@ const Welcome = () => {
       {/* Bottom Sticky Feedback Banner */}
       {showFeedbackBanner && (
         <div 
-          className="fixed bottom-0 w-full bg-white border-t border-gray-200 shadow-lg z-40 py-2 px-6"
+          className="fixed bottom-0 w-full bg-[#1a1a1a] border-t border-gray-600 shadow-lg z-40 py-2 px-6"
           style={{
             animation: 'slideUpFromBottom 0.6s ease-out',
             WebkitAnimation: 'slideUpFromBottom 0.6s ease-out',
@@ -270,17 +256,17 @@ const Welcome = () => {
         >
           {isBlocked ? (
             <div className="text-center">
-              <p className="text-red-500 font-medium text-sm sm:text-base mb-1">
+              <p className="text-red-400 font-medium text-sm sm:text-base mb-1">
                 You exceeded the limit of chances to give feedback
                 {violationCount > 1 && <span className="text-xs block">(Violation #{violationCount})</span>}
               </p>
-              <p className="text-gray-600 text-xs sm:text-sm">
-                Try again in <span className="font-bold text-red-500">{formatTime(cooldownTimer)}</span>
+              <p className="text-gray-300 text-xs sm:text-sm">
+                Try again in <span className="font-bold text-red-400">{formatTime(cooldownTimer)}</span>
               </p>
             </div>
           ) : !feedbackGiven ? (
             <div className="flex items-center justify-center space-x-6">
-              <span className="text-gray-700 font-medium text-sm sm:text-base">
+              <span className="text-white font-medium text-sm sm:text-base">
                 How was your experience?
               </span>
               <div className="flex space-x-3">

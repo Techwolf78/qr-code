@@ -5,7 +5,7 @@ import Welcome from './Welcome';
 function App() {
   return (
     <Router>
-      <div className="App bg-black">
+      <div className="App">
         <Routes>
           <Route path="/" element={<Welcome />} />
 
